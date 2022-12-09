@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:dichotic/listen.dart';
 import 'package:dichotic/settings/settings.dart';
 
+import 'calibration/volumecalibrate.dart';
+
 class StartApp extends StatefulWidget {
   const StartApp({super.key, required this.title});
   final String title;
@@ -24,6 +26,7 @@ class StartApp extends StatefulWidget {
 var pageroute_settings = () => MaterialPageRoute(builder: (context) => const SettingsPage());
 var pageroute_tests = () => MaterialPageRoute(builder: (context) => const TestApp(title: "Test"));
 var pageroute_learn = () => MaterialPageRoute(builder: (context) => const SettingsPage());
+var pageroute_calibrate = () => MaterialPageRoute(builder: (context) => VolumeCalibrate());
 
 class StartAppState extends State<StartApp> {
   
@@ -64,13 +67,22 @@ class StartAppState extends State<StartApp> {
               containerHeight: (screenHeight-appBarHeight-statusBarHeight)*0.07,
               containerWidth: screenWidth*0.65,)),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, (screenHeight-appBarHeight-statusBarHeight)*0.01, 0, (screenHeight-appBarHeight-statusBarHeight)*0.13),
+              padding: EdgeInsets.fromLTRB(0, (screenHeight-appBarHeight-statusBarHeight)*0.01, 0, (screenHeight-appBarHeight-statusBarHeight)*0.01),
               child: 
             CustomButton(
               text1: Text("Learn More", style: TextStyle(color: Colors.black, fontSize: 16)), 
               pageroute: pageroute_learn,
               containerHeight: (screenHeight-appBarHeight-statusBarHeight)*0.07,
-              containerWidth: screenWidth*0.65,))
+              containerWidth: screenWidth*0.65,)),
+            Padding(
+                padding: EdgeInsets.fromLTRB(0, (screenHeight-appBarHeight-statusBarHeight)*0.01, 0, (screenHeight-appBarHeight-statusBarHeight)*0.13),
+                child:
+                CustomButton(
+                  text1: Text("Calibrate", style: TextStyle(color: Colors.black, fontSize: 16)),
+                  pageroute: pageroute_calibrate,
+                  containerHeight: (screenHeight-appBarHeight-statusBarHeight)*0.07,
+                  containerWidth: screenWidth*0.65,))
+
           ],
         ),
       ),
