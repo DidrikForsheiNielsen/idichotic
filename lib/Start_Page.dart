@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dichotic/listen.dart';
 import 'package:dichotic/settings/settings.dart';
-
+import 'learn_more.dart';
 import 'calibration/volumecalibrate.dart';
 
 class StartApp extends StatefulWidget {
@@ -25,7 +25,7 @@ class StartApp extends StatefulWidget {
 
 var pageroute_settings = () => MaterialPageRoute(builder: (context) => const SettingsPage());
 var pageroute_tests = () => MaterialPageRoute(builder: (context) => const TestApp(title: "Test"));
-var pageroute_learn = () => MaterialPageRoute(builder: (context) => const SettingsPage());
+
 var pageroute_calibrate = () => MaterialPageRoute(builder: (context) => VolumeCalibrate());
 var pageroute_learn = () => MaterialPageRoute(builder: (context) => LearnMore());
 
@@ -68,7 +68,7 @@ class StartAppState extends State<StartApp> {
               containerHeight: (screenHeight-appBarHeight-statusBarHeight)*0.07,
               containerWidth: screenWidth*0.65,)),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, (screenHeight-appBarHeight-statusBarHeight)*0.01, 0, (screenHeight-appBarHeight-statusBarHeight)*0.13),
+              padding: EdgeInsets.fromLTRB(0, (screenHeight-appBarHeight-statusBarHeight)*0.01, 0, (screenHeight-appBarHeight-statusBarHeight)*0.01),
               child: 
             CustomButton(
               text1: Text("Learn More", style: TextStyle(color: Colors.black, fontSize: 16)), 
